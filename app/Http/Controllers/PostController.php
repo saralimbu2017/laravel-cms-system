@@ -8,10 +8,9 @@ use App\Models\Post;
 class PostController extends Controller
 {
     //
-    public function show($id){
-        dd( $id);
-        
-        //return view('blog-post', ['post'=>$post]);
+    public function show(Post $post){
+        //dd( $id);
+        return view('blog-post', ['post'=>$post]);
     }
 
 }
