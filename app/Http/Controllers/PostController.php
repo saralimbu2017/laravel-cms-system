@@ -19,6 +19,13 @@ class PostController extends Controller
     }
 
     public function store(){
-        dd(request()->all());
+
+        $input = request()->validate([
+            'title'=>'required|min:8|max:255',
+            'post_image'=>'file',
+            'body'=>'required'
+        ]);
+
+        
     }
 }
