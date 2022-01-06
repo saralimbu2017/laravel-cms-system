@@ -37,9 +37,13 @@ class PostController extends Controller
         
         //dd($request->input('post_image'));
         auth()->user()->posts()->create($inputs);
-
+        // Session::flash('post-created-message','Post was created'.$inputs['title']);
         return redirect()->route('post.index');
 
+    }
+
+    public function edit(Post $post){
+        return view('admin.posts.edit', ['post'=>$post]);
     }
 
     public function destroy(Post $post){
