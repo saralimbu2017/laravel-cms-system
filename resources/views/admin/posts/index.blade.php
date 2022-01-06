@@ -67,7 +67,7 @@
               </div>
             </div>
           </div>
-    
+          {{$posts->links()}}
   @endsection
 
   @section('scripts')
@@ -76,6 +76,7 @@
     <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
+    <!-- <script src="{{asset('js/demo/datatables-demo.js')}}"></script> -->
+    
   @endsection
 </x-admin-master>
