@@ -38,7 +38,8 @@ class PostController extends Controller
         //dd($request->input('post_image'));
         auth()->user()->posts()->create($inputs);
 
-        return back();
+        return redirect()->route('post.index');
+
     }
 
     public function destroy(Post $post){
