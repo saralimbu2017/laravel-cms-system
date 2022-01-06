@@ -70,6 +70,8 @@ class PostController extends Controller
 
         $post->title = $inputs['title'];
         $post->body = $inputs['body'];
+
+        $this->authorize('update', $post);
         $post->update();
         //dd($request->input('post_image'));
         //auth()->user()->posts()->save($post);
