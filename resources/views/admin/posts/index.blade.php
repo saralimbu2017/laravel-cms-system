@@ -2,6 +2,12 @@
   @section('content')
 
     <h1>All Posts</h1>
+    @if(Session::has('message'))
+
+      <div class="alert alert-success">{{Session::get('message')}}</div>
+
+    @endif
+
     <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
@@ -42,7 +48,7 @@
                         </td>
                         <td>{{$post->created_at->diffForHumans() }}</td>
                         <td>{{$post->updated_at->diffForHumans() }}</td>
-                        <td><form method="post" action="{{route('post.destroy')}}" enctype="multipart">
+                        <td><form method="post" action="{{route('post.destroy',$post->id)}}" enctype="multipart">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger">Delete</button>
