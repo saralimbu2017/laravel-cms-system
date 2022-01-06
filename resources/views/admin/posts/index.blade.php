@@ -67,7 +67,12 @@
               </div>
             </div>
           </div>
-          {{$posts->links()}}
+          <div class="dflex">
+            <div class="mx-auto">
+              {{$posts->links()}}
+            </div>
+          </div>
+          
   @endsection
 
   @section('scripts')
