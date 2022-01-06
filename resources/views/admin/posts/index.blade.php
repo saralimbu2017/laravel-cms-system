@@ -8,7 +8,7 @@
       @elseif(Session::has('post-created-message'))
       <div class="alert alert-success">{{Session::get('post-created-message')}}</div>
       @else
-      <div class="alert alert-success">{{Session::get('post-update-message')}}</div>
+      <div class="alert alert-success">{{Session::get('post-updated-message')}}</div>
     @endif
 
     <div class="card shadow mb-4">
