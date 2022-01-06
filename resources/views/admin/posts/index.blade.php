@@ -4,8 +4,9 @@
     <h1>All Posts</h1>
     @if(Session::has('message'))
 
-      <div class="alert alert-success">{{Session::get('message')}}</div>
-
+      <div class="alert alert-danger">{{Session::get('message')}}</div>
+      <!-- @elseif(Session::has('post-created-message'))
+      <div class="alert alert-success">{{Session::get('message')}}</div> -->
     @endif
 
     <div class="card shadow mb-4">
@@ -42,7 +43,7 @@
                       <tr>
                         <td>{{$post->id }}</td>
                         <td>{{$post->user->name }}</td>
-                        <td>{{$post->title }}</td>
+                        <td><a href="{{route('post.edit',$post->id)}}">{{$post->title }}</a></td>
                         <td>
                           <img height="40px" src="{{$post->post_image }}" alt="">
                         </td>
