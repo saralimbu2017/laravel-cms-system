@@ -33,7 +33,8 @@ class PostController extends Controller
 
         if(request('post_image')){
             $inputs['post_image']=request('post_image')->store('images');
-        }
+          
+         }
         
         //dd($request->input('post_image'));
         auth()->user()->posts()->create($inputs);
@@ -66,7 +67,7 @@ class PostController extends Controller
 
         $post->title = $inputs['title'];
         $post->body = $inputs['body'];
-        $post->save();
+        $post->update();
         //dd($request->input('post_image'));
         //auth()->user()->posts()->save($post);
         Session::flash('post-updated-message','Post was updated'.$inputs['title']);
