@@ -13,8 +13,8 @@
               <input type="file">
             </div>
             <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" name="name" class="form-control" id="name"  value="{{$user->name}}">
+              <label for="username">Username</label>
+              <input type="text" name="username" class="form-control" id="username"  value="{{$user->username}}">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
