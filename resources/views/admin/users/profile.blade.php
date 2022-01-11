@@ -15,7 +15,15 @@
             </div>
             <div class="form-group">
               <label for="username">Username</label>
-              <input type="text" name="username" class="form-control" id="username"  value="{{$user->username}}">
+              <input 
+              type="text" 
+              name="username" 
+              class="form-control
+              @error('username')
+                      is-invalid
+              @enderror"
+              id="username"  
+              value="{{$user->username}}">
 
               @error('username')
                 <div class="alert alert-danger">
