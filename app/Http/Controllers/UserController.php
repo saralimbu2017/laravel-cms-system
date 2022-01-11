@@ -17,8 +17,8 @@ class UserController extends Controller
         $inputs = request()->validate([
             'username' => ['required','string','max:255','alpha_dash'],
             'name' => ['required','string','max:255'],
-            'email' => ['required','email','max:255','confirmed'],
-            'avatart' => ['file'],
+            'email' => ['required','email','max:255'],
+            'avatar' => ['file'],
         ]);
 
          if(request('avatar')){
