@@ -7,7 +7,7 @@
             @csrf
             @method('PUT')
             <div class="mb-4">
-              <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60" height="100px" alt="">
+              <img class="img-profile rounded-circle" src="{{$user->avatar}}" height="100px" alt="">
 
             </div>
             <div class="form-group">
