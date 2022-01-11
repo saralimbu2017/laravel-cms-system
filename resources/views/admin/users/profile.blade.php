@@ -16,18 +16,39 @@
             <div class="form-group">
               <label for="username">Username</label>
               <input type="text" name="username" class="form-control" id="username"  value="{{$user->username}}">
+
+              @error('username')
+                <div class="alert alert-danger">
+                  {{$message}}
+                </div>
+              @enderror
             </div>
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" name="name" class="form-control" id="name"  value="{{$user->name}}">
+              @error('name')
+                <div class="alert alert-danger">
+                  {{$message}}
+                </div>
+              @enderror
             </div>
             <div class="form-group">
               <label for="email">Email</label>
               <input type="text" name="email" class="form-control" id="email" value="{{$user->email}}">
+              @error('email')
+                <div class="alert alert-danger">
+                  {{$message}}
+                </div>
+              @enderror
             </div>
             <div class="form-group">
               <label for="password">Password</label>
               <input type="password" name="password" class="form-control" id="password" >
+              @error('password')
+                <div class="alert alert-danger">
+                  {{$message}}
+                </div>
+              @enderror
             </div>
             <div class="form-group">
               <label for="password-confirm">Confirm Password</label>
