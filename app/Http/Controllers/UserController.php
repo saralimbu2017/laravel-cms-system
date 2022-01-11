@@ -13,8 +13,14 @@ class UserController extends Controller
     }
 
     public function update(User $user){
-        if(request('avatar')){
-            dd(request('avatar'));
-        }
+        // if(request('avatar')){
+        //     dd(request('avatar'));
+        // }
+        $inputs = request()->validate([
+            'username' => ['required','string','max:255','alpha_dash'],
+            'name' => ['required','string','max:255'],
+            'email' => ['required','email','max:255','confirmed'],
+            'avatart' => ['file'],
+        ]);
     }
 }
