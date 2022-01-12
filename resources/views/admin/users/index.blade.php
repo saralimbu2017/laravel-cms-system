@@ -3,6 +3,11 @@
 
     <h1>Users</h1>
 
+    @if(session('user-deleted'))
+      <div class="alert alert-danger">{{session('user-deleted')}}</div>
+
+    @endif
+
     <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
@@ -43,7 +48,7 @@
                       <td>{{ \Carbon\Carbon::parse($user->created_at)->diffForHumans() }}  </td>
                       <td>{{ \Carbon\Carbon::parse($user->updated_at)->diffForHumans() }} </td>
                       <td>
-                        <form method="post" action="{{route('user.destroy', $user->id)}}">
+                        <form method="POST" action="{{route('user.destroy', $user->id)}}">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">Delete</button>
