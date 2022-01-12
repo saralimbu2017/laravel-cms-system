@@ -44,8 +44,9 @@
                       <td>{{ \Carbon\Carbon::parse($user->updated_at)->diffForHumans() }} </td>
                       <td>
                         <form method="post" action="{{route('user.destroy')}}">
-
-
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">Delete</button>
                         </form>
                       </td>
                     </tr>
