@@ -2,5 +2,5 @@
 $(document).ready(function() {
   $('#dataTable').DataTable();
 
-  $('#users-table').DataTable();
+  $('#usersTable').DataTable();
 });
