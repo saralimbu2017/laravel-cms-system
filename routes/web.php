@@ -49,6 +49,6 @@ Route::middleware(['auth'])->group(function () {
   Route::delete('/admin/users/{user}/destroy', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
 });
 
-Route::middleware(['role:admin'])->group(function () {
+Route::middleware(['role:ADMIN'])->group(function () {
   Route::get('/admin/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 });
