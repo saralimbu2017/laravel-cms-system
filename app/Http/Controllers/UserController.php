@@ -8,6 +8,10 @@ use App\Models\User;
 class UserController extends Controller
 {
     //
+    public function index(){
+        return view('admin.users.index');
+    }
+
     public function show(User $user){
         return view('admin.users.profile',['user'=>$user]);
     }
