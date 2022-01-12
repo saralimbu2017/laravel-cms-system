@@ -13,27 +13,31 @@
                   <thead>
                     <tr>
                       <th>Id</th>
-                      <th>Owner</th>
-                      <th>Title</th>
-                      <th>Image</th>
-                      <th>Created At</th>
-                      <th>Updated At</th>
-                      <th>Delete</th>
+                      <th>Username</th>
+                      <th>Avatar</th>
+                      <th>Name</th>
+                      <th>Registered date</th>
+                      <th>Update profile date</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>Id</th>
-                      <th>Owner</th>
-                      <th>Title</th>
-                      <th>Image</th>
-                      <th>Created At</th>
-                      <th>Updated At</th>
-                      <th>Delete</th>
+                      <th>Username</th>
+                      <th>Avatar</th>
+                      <th>Name</th>
+                      <th>Registered date</th>
+                      <th>Update profile date</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                    
+                    @foreach($users as $user)
+                    <tr>
+                      <td>{{$user->id}} </td>
+                    </tr>
+
+                    @endforeach
+
                   </tbody>
                  
                 </table>
