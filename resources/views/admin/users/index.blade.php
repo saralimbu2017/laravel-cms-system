@@ -18,6 +18,8 @@
                       <th>Name</th>
                       <th>Registered date</th>
                       <th>Update profile date</th>
+                      <th>Update profile date</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -28,6 +30,7 @@
                       <th>Name</th>
                       <th>Registered date</th>
                       <th>Update profile date</th>
+                      <th>Delete</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -39,7 +42,12 @@
                       <td>{{$user->name}} </td>
                       <td>{{ \Carbon\Carbon::parse($user->created_at)->diffForHumans() }}  </td>
                       <td>{{ \Carbon\Carbon::parse($user->updated_at)->diffForHumans() }} </td>
+                      <td>
+                        <form method="post" action="{{route('user.destroy')}}">
 
+
+                        </form>
+                      </td>
                     </tr>
 
                     @endforeach
