@@ -34,6 +34,12 @@
                     @foreach($users as $user)
                     <tr>
                       <td>{{$user->id}} </td>
+                      <td>{{$user->username}} </td>
+                      <td><img height="50px" src="{{$user->avatar}}" alt=""> </td>
+                      <td>{{$user->name}} </td>
+                      <td>{{ \Carbon\Carbon::parse($user->created_at)->diffForHumans() }}  </td>
+                      <td>{{ \Carbon\Carbon::parse($user->updated_at)->diffForHumans() }} </td>
+
                     </tr>
 
                     @endforeach
