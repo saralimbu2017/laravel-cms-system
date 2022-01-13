@@ -28,6 +28,10 @@ Route::get('/post/{post}', [App\Http\Controllers\PostController::class, 'show'])
 Route::middleware(['auth'])->group(function () {
   Route::get('/admin', [App\Http\Controllers\AdminsController::class, 'index'])->name('admin.index');
 
+  Route::put('/admin/users/{user}/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.profile.update');
+
+  Route::delete('/admin/users/{user}/destroy', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
+
   Route::get('/admin/posts', [App\Http\Controllers\PostController::class, 'index'])->name('post.index');
   
   Route::get('/admin/posts/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
@@ -39,17 +43,12 @@ Route::middleware(['auth'])->group(function () {
   Route::delete('/admin/posts/{post}/destroy', [App\Http\Controllers\PostController::class, 'destroy'])->name('post.destroy');
 
   Route::patch('/admin/posts/{post}/update', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
-
- 
-  Route::put('/admin/users/{user}/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.profile.update');
-
- 
-
-  Route::delete('/admin/users/{user}/destroy', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
 });
 
 Route::middleware(['role:ADMIN'])->group(function () {
   Route::get('/admin/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+
+  Route::get('admin/users/{user}/profile',[App\Http\Controllers\UserController::class, 'show'])->name('user.show');
 });
 
 Route::middleware(['can:view,user'])->group(function(){
