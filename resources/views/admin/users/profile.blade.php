@@ -68,6 +68,12 @@
           </form>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          ROLES
+        </div>
+      </div>
   @endsection
 
 </x-admin-master>
