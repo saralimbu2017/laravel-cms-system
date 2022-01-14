@@ -71,7 +71,40 @@
 
       <div class="row">
         <div class="col-sm-12">
-          ROLES
+          datatable
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Slug</th>
+                      <th>Attach</th>
+                      <th>Detach</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Slug</th>
+                      <th>Attach</th>
+                      <th>Detach</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    @foreach($roles as $role)
+                    <tr>
+                      <td>{{$role->id}}</td>
+                      <td>{{$role->name}}</td>
+                      <td>{{$role->slug}}</td>
+                      <td><button class="btn btn-primary">Attach</button></td>
+                      <td><button class="btn btn-primary">Detach</button></td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+            </div>
+          </div>
         </div>
       </div>
   @endsection
