@@ -37,6 +37,13 @@ class UserController extends Controller
         return back();
     }
 
+    public function attach(User $user){
+        //return request('role');
+        
+        $user->roles()->attach(request('role'));
+        return back();
+    } 
+
     public function destroy(User $user){
         $user->delete();
         session()->flash('user-deleted','User has been deleted');
