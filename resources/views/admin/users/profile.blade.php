@@ -108,12 +108,13 @@
                       <td>{{$role->name}}</td>
                       <td>{{$role->slug}}</td>
                       <td>
-                        <form method="post" action="{{route('')}}" >
+                        <form method="post" action="{{route('user.attach',$user)}}" >
                           @method('PUT')
                           @csrf
-                          <button class="btn btn-primary">Attach</button></td>
+                          <input type="text" name="role" value="{{$role->id}}">
+                          <button class="btn btn-primary">Attach</button>
                         </form>
-                        
+                        </td> 
                       <td><button class="btn btn-primary">Detach</button></td>
                     </tr>
                     @endforeach
