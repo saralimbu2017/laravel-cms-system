@@ -60,7 +60,7 @@
         <x-admin.sidebar.admin-sidebar-users-links></x-admin.sidebar.admin-sidebar-users-links>
       @endif
 
-    <x-admin class="sidebar authorization-links"></x-admin>
+    <x-admin.sidebar.authorization-links"></x-admin.sidebar.authorization-links>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
