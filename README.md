@@ -1,3 +1,41 @@
+#<div id="top"></div>
+<!--
+*** It is a Laravel web application.
+-->
+
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+<div align="center">
+    <h1>Laravel CMS SYSTEM</h1>
+    <h5>ABOUT THE PROJECT</h2>
+    <a href="https://github.com/saralimbu2017/laravel-cms-system">
+    </a>
+ </div>
+ 
+ <div>
+    <p text-align="justify">
+      CMS System is a laravel application that allows users to create, edit and display contents. Content is stored in database and displayed using blade template.
+    </p>
+</div>
+
+<!--Technologies Used-->
+## BUILT WITH
+- PHP 7.2
+- HTML
+- Laravel
+<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 <div id="top"></div>
 <!--
 *** It is a Laravel web application.
