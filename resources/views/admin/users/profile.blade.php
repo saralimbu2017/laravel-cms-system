@@ -112,7 +112,14 @@
                           @method('PUT')
                           @csrf
                           <input type="text" name="role" value="{{$role->id}}">
-                          <button type="submit" class="btn btn-primary">Attach</button>
+                          <button 
+                                  type="submit" 
+                                  class="btn btn-primary"
+                                  @if($user->roles->contains($role))
+                                    disabled
+                                  @endif
+                                  
+                                  >Attach</button>
                         </form>
                         </td> 
                       <td>
