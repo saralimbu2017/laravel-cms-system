@@ -127,7 +127,13 @@
                           @method('PUT')
                           @csrf
                           <input type="text" name="role" value="{{$role->id}}">
-                        <button type="submit" class="btn btn-danger">Detach</button>
+                        <button 
+                                type="submit" 
+                                class="btn btn-danger"
+                                @if(!$user->roles->contains($role))
+                                    disabled
+                                  @endif
+                                >Detach</button>
                         </form>
                       </td>
                     </tr>
