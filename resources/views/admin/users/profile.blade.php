@@ -101,21 +101,28 @@
                                     @if($user_role->slug == $role->slug)
                                       checked
                                     @endif
-                                  @endforeach 
+                                  @endforeach  
                       
                       ></td>
                       <td>{{$role->id}}</td>
                       <td>{{$role->name}}</td>
                       <td>{{$role->slug}}</td>
                       <td>
-                        <form method="post" action="{{route('user.attach',$user)}}" >
+                        <form method="post" action="{{route('user.role.attach',$user)}}" >
                           @method('PUT')
                           @csrf
                           <input type="text" name="role" value="{{$role->id}}">
-                          <button class="btn btn-primary">Attach</button>
+                          <button type="submit" class="btn btn-primary">Attach</button>
                         </form>
                         </td> 
-                      <td><button class="btn btn-primary">Detach</button></td>
+                      <td>
+                        <form method="post" action="{{route('user.role.detach',$user)}}" >
+                          @method('PUT')
+                          @csrf
+                          <input type="text" name="role" value="{{$role->id}}">
+                        <button type="submit" class="btn btn-danger">Detach</button>
+                        </form>
+                      </td>
                     </tr>
                     @endforeach
                   </tbody>
