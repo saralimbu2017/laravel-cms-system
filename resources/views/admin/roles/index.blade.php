@@ -11,6 +11,7 @@
                 </form>
           </div>
           <div class="col-sm-9">
+            <h6>Roles</h6>
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
