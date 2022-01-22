@@ -3,4 +3,6 @@
 
   Route::post('/roles',[App\Http\Controllers\RoleController::class, 'store'])->name('roles.store');
 
+  Route::post('/roles/{role}/destroy',[App\Http\Controllers\RoleController::class, 'destroy'])->name('roles.destroy');
+
 ?>
