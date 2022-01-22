@@ -1,12 +1,16 @@
 <x-admin-master>
   @section('content')
+
       <div class="row">
-        @if(session()->has('role-deleted'))
+          @if(session()->has('role-deleted'))
 
           <div class="alert alert-danger">
             {{session('role-deleted')}}
           </div>
-        @endif
+          @endif
+      </div>
+      <div class="row">
+       
           <div class="col-sm-3">
             <form method="post" action="{{route('roles.store')}}">
                 @csrf
