@@ -31,7 +31,7 @@ class RoleController extends Controller
 
     public function destroy(Role $role){
         $role->delete();
-        session()->flash('role-delete','Deleted Role'.$role->name);
+        session()->flash('role-deleted','Deleted Role'.$role->name);
         return back();
     }
 }
