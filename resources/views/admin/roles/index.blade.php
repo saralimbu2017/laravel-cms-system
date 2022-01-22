@@ -46,7 +46,7 @@
                 <td>{{$role->name}}</td>
                 <td>{{$role->slug}}</td>
                 <td>
-                  <form method="post" action="{{route('roles.destroy')}}">
+                  <form method="post" action="{{route('roles.destroy',$role->id)}}">
                     @csrf
                     @method("DELETE")
                     <button type="submit" class="btn btn-danger">Delete</button>
