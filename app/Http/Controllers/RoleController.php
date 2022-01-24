@@ -33,6 +33,7 @@ class RoleController extends Controller
         $role->name = Str::ucfirst(request('name'));
         $role->slug = Str::of(request('name'))->slug('-');
         $role->save();
+        session()->flash('role-updated','Role Updated'.request('name'));
         return back();
     }
 
