@@ -29,11 +29,11 @@
 
   <div class="row">
     <div class="col-lg-12">
-
+    @if($permissions->isNotEmpty())
     
     <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Roles</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Permissions</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -41,37 +41,28 @@
                   <thead>
                     <tr>
                       <th>Id</th>
-                      <th>Username</th>
-                      <th>Avatar</th>
                       <th>Name</th>
-                      <th>Registered date</th>
-                      <th>Update profile date</th>
-                      <th>Update profile date</th>
+                      <th>Slug</th>
                       <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>Id</th>
-                      <th>Username</th>
-                      <th>Avatar</th>
                       <th>Name</th>
-                      <th>Registered date</th>
-                      <th>Update profile date</th>
+                      <th>Slug</th>
                       <th>Delete</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                    @foreach($users as $user)
+                    @foreach($permissions as $permission)
                     <tr>
-                      <td>{{$user->id}} </td>
-                      <td><a href="{{route('roles.edit', $role->id)}}"></a>{{$user->username}} </td>
-                      <td><img height="50px" src="{{$user->avatar}}" alt=""> </td>
-                      <td>{{$user->name}} </td>
-                      <td>{{ \Carbon\Carbon::parse($user->created_at)->diffForHumans() }}  </td>
-                      <td>{{ \Carbon\Carbon::parse($user->updated_at)->diffForHumans() }} </td>
+                      <td>{{$permission->id}} </td>
+                      <td>{{$permission->name}} </td>
+                      <td>{{$permission->slug}} </td>
+                     
                       <td>
-                        <form method="POST" action="{{route('user.destroy', $user->id)}}">
+                        <form method="POST" action="">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">Delete</button>
@@ -94,7 +85,9 @@
           </div>
 
 
-    </div>
+      @endif
+        </div>
+  
   </div>
   @endsection
 
