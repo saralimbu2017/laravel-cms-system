@@ -40,6 +40,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
+                      <th>Options</th>
                       <th>Id</th>
                       <th>Name</th>
                       <th>Slug</th>
@@ -48,6 +49,7 @@
                   </thead>
                   <tfoot>
                     <tr>
+                      <th>Options</th>
                       <th>Id</th>
                       <th>Name</th>
                       <th>Slug</th>
@@ -57,6 +59,14 @@
                   <tbody>
                     @foreach($permissions as $permission)
                     <tr>
+                    <td><input type="checkbox"
+                                 @foreach($role->permissions as $role_permission)
+                                    @if($role_permission->slug == $permission->slug)
+                                      checked
+                                    @endif
+                                  @endforeach  
+                      
+                      ></td>
                       <td>{{$permission->id}} </td>
                       <td>{{$permission->name}} </td>
                       <td>{{$permission->slug}} </td>
