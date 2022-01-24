@@ -72,11 +72,23 @@
                       <td>{{$permission->slug}} </td>
                      
                       <td>
-                        <form method="POST" action="">
+                      <form method="post" action="{{route('role.permission.attach',$role)}}" >
+                          @method('PUT')
+                          @csrf
+                          <input type="hidden" name="role" value="{{$permission->id}}">
+                        <button 
+                                type="submit" 
+                                class="btn btn-danger"
+                                @if(!$role->permissions->contains($permission))
+                                    disabled
+                                  @endif
+                                >Attach</button>
+                        </form>
+                        <!-- <form method="POST" action="">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">Delete</button>
-                        </form>
+                        </form> -->
                       </td>
                     </tr>
 
