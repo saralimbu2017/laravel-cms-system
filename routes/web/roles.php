@@ -7,4 +7,6 @@
 
   Route::get('/roles/{role}/edit',[App\Http\Controllers\RoleController::class, 'edit'])->name('roles.edit');
 
+  Route::get('/roles/{role}/update',[App\Http\Controllers\RoleController::class, 'update'])->name('roles.update');
+
 ?>
