@@ -1,5 +1,12 @@
 <x-admin-master> 
   @section('content')
+
+    @if(session()->has('role-updated'))
+      <div class="alert alert-success">
+        {{session('role-updated')}}
+      </div>
+
+    @endif
   <div class="col-sm-6">
     <h1>Edit Role: {{$role->name}}</h1>
     <form method="post" action="{{route('roles.update', $role->id)}}">
