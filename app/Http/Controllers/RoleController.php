@@ -29,6 +29,13 @@ class RoleController extends Controller
         return back();
     }
 
+    public function update(Role $role){
+        $role->name = Str::ucfirst(request('name'));
+        $role->slug = Str::of(request('name'))->slug('-');
+        $role->save();
+        return back();
+    }
+
     public function edit(Role $role){
         return view('admin.roles.edit', ['role'=>$role]);
     }
