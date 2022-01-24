@@ -75,7 +75,7 @@
                       <form method="post" action="{{route('role.permission.attach',$role)}}" >
                           @method('PUT')
                           @csrf
-                          <input type="hidden" name="role" value="{{$permission->id}}">
+                          <input type="hidden" name="permission" value="{{$permission->id}}">
                         <button 
                                 type="submit" 
                                 class="btn btn-danger"
