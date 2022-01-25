@@ -63,4 +63,9 @@ class RoleController extends Controller
         $role->permissions()->attach(request('permission'));
         return back();
     }
+
+    public function detach_permission(Role $role){
+        $role->permissions()->detach(request('permission'));
+        return back();
+    }
 }
