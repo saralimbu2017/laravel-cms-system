@@ -100,7 +100,7 @@
                           <button 
                                   type="submit" 
                                   class="btn btn-primary"
-                                  @if($role->permissions->contains($permission))
+                                  @if(!$role->permissions->contains($permission))
                                       disabled
                                     @endif
                                   >Detach</button>
