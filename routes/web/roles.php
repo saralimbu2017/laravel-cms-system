@@ -11,4 +11,5 @@
 
   Route::put('/roles/{role}/attach',[App\Http\Controllers\RoleController::class, 'attach_permission'])->name('roles.permission.attach');
 
+  Route::put('/roles/{role}/detach',[App\Http\Controllers\RoleController::class, 'detach_permission'])->name('roles.permission.detach');
 ?>
