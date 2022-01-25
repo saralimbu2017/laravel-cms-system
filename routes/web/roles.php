@@ -9,6 +9,6 @@
 
   Route::put('/roles/{role}/update',[App\Http\Controllers\RoleController::class, 'update'])->name('roles.update');
 
-  Route::put('/roles/{role}/attach',[App\Http\Controllers\RoleController::class, 'attach_permission'])->name('roles.permission.update');
+  Route::put('/roles/{role}/attach',[App\Http\Controllers\RoleController::class, 'attach_permission'])->name('roles.permission.attach');
 
 ?>
