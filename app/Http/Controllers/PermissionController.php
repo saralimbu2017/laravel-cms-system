@@ -26,4 +26,8 @@ class PermissionController extends Controller
         // dd(request('name'));
         return back();
     }
+
+    public function edit(Permission $permission){
+        return view('admin.permissions.edit',['permission'=>$permission]);
+    }
 }
