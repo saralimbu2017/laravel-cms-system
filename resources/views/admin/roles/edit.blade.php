@@ -44,7 +44,8 @@
                       <th>Id</th>
                       <th>Name</th>
                       <th>Slug</th>
-                      <th>Delete</th>
+                      <th>Attach</th>
+                      <th>Detach</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -53,7 +54,8 @@
                       <th>Id</th>
                       <th>Name</th>
                       <th>Slug</th>
-                      <th>Delete</th>
+                      <th>Attach</th>
+                      <th>Detach</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -89,6 +91,20 @@
                             @method('DELETE')
                             <button class="btn btn-danger">Delete</button>
                         </form> -->
+                      </td>
+                      <td>
+                        <form method="post" action="{{route('roles.permission.detach',$role)}}" >
+                            @method('PUT')
+                            @csrf
+                            <input type="hidden" name="permission" value="{{$permission->id}}">
+                          <button 
+                                  type="submit" 
+                                  class="btn btn-primary"
+                                  @if($role->permissions->contains($permission))
+                                      disabled
+                                    @endif
+                                  >Detach</button>
+                          </form>
                       </td>
                     </tr>
 
