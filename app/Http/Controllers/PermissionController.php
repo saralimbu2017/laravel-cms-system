@@ -30,4 +30,9 @@ class PermissionController extends Controller
     public function edit(Permission $permission){
         return view('admin.permissions.edit',['permission'=>$permission]);
     }
+
+    public function destroy(Permission $permission){
+        $permission->delete();
+        return back();
+    }
 }
