@@ -60,7 +60,7 @@ class RoleController extends Controller
     }
 
     public function attach_permission(Role $role){
-        $role->permission()->attach(request('permission'));
+        $role->permissions()->attach(request('permission'));
         return back();
     }
 }
