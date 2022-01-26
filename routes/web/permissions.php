@@ -7,4 +7,6 @@
 
   Route::get('/permissions/{permission}/edit',[App\Http\Controllers\PermissionController::class, 'edit'])->name('permissions.edit');
 
+  Route::put('/permissions/{permission}/update',[App\Http\Controllers\PermissionController::class, 'update'])->name('permissions.update');
+
 ?>
