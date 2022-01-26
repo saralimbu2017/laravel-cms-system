@@ -35,4 +35,20 @@ class PermissionController extends Controller
         $permission->delete();
         return back();
     }
+
+    public function update(Permission $permission){
+        $permission->name = Str::ucfirst(request('name'));
+        $permission->slug = Str::of(request('name'))->slug('-');
+
+        if($permission->isDirty('name')){
+            session()->flash('permission-updated','Permission is Updated'.request('name'));
+            $permission->save();
+        } else {
+            session()->flash('permission-updated','Nothing has been Updated');
+            
+        }
+       
+        
+        return back();
+    }
 }
