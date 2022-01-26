@@ -17,7 +17,7 @@
 
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" name="name" class="form-control" id="name" value="{{$role->name}}">
+            <input type="text" name="name" class="form-control" id="name" value="{{$permission->name}}">
           </div>
 
           <button class="btn btn-primary">Update</button>
