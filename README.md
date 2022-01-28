@@ -18,7 +18,7 @@
  
  <div>
     <p text-align="justify">
-      CMS System is a laravel application that allows users to create, edit and display contents. Content is stored in database and displayed using blade template.
+      CMS System is a laravel application demonstrating MVC(Model View Controller) architectural pattern.Blade template engine is used for the front-end and mysql with Eloquent ORM has been use to configure and interact with database.
     </p>
 </div>
 
